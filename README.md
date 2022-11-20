@@ -1,4 +1,4 @@
-<center>AirHotel lader</center>
+​																										**AirHotel lader**
 
 
 
@@ -6,9 +6,9 @@
 
 As an international student, I have a very strong need to travel. But every time I look for information on hotels and flights, it gives me a huge headache. The quality of hotels on the common OTA sites varied. So after a long period of experimentation, I started to choose some hotel chains and signed up for the frequent flyer programme. In fact this way the prices are often lower than the OTAs too. In terms of flights, low-cost airlines are cheap, but they are also often expensive when you add in baggage. Full service airlines tend to have more expensive airfares themselves, but award tickets often come at some unexpectedly good prices. The current search tools provided by the airlines are not good and smart enough. So I started this project to get some good prices on hotels and airline tickets.
 
-![Screenshot 2022-11-20 at 22.04.22](/Users/zoukang/Library/Application Support/typora-user-images/Screenshot 2022-11-20 at 22.04.22.png)
+![IHG](./picture/IHG.png)
 
-![Screenshot 2022-11-20 at 22.03.48](/Users/zoukang/Library/Application Support/typora-user-images/Screenshot 2022-11-20 at 22.04.03.png)
+![from booking](./picture/Booking.png)
 
 ​																		Price comparison between OTA and direct channel
 
