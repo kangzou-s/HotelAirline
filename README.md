@@ -24,4 +24,5 @@ For hotel groups and airlines, this tool helps them to drive traffic and increas
 
 ## Main progress
 
-- 20/11/2022 first version, test api for IHG, airfrance, and Csair.
+- 20/11/2022 First version, test api for IHG, airfrance, and Csair.
+- 07/12/2022 Add database. realize the function of search cash price, points price of the IHG hotels in specific city.

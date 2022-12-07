@@ -39,12 +39,25 @@ import requests
 # print(1)
 
 
+## 测试数据库的连接
+import MySQLdb
 
+## change to use mysqldb, don't use _mysql
 from MySQLdb import _mysql
-db = _mysql.connect(host="localhost", user="root",
-                  passwd="password", db="kang")
-db.query("""select runoob_id,runoob_title from test1 where runoob_id != 3 """)
-r = db.store_result()
-r.fetch_row()
+from MySQLdb.constants import FIELD_TYPE
+# my_conv = {FIELD_TYPE.DOUBLE: float,FIELD_TYPE.VARCHAR :str}
+# db = _mysql.connect(host="localhost", db="AirHotel", read_default_file="~/.my.cnf", charset='utf8', conv=my_conv)
+
+db = MySQLdb.connect(host="localhost", db="AirHotel", read_default_file="~/.my.cnf", charset='utf8')
+# db.query("select * from IHGCityList")
+# db.query("select * from IHGHotelPrice")
+cursor = db.cursor()
+cursor.execute("select version()")
+data = cursor.fetchone()
+print ("Database version : %s " % data)
+# r = db.store_result()
+# result = r.fetch_row(maxrows=0, how=1)
+# print(type(result[0]))
+# print(result)
 
 
