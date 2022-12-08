@@ -1,4 +1,5 @@
 import fileinput
+import os
 import re
 import json
 import datetime
@@ -25,8 +26,9 @@ headers = {'Content-Type': content_type, 'X-IHG-API-KEY': api_key, 'X-IHG-MWS-AP
 for i in range(180):
     checkin = str((datetime.today() + timedelta(days=i)).date())
     checkout = str((datetime.today() + timedelta(days=(i + 1))).date())
-
-    with open("IHG.json", "r+") as jsonFile:
+    print(os.listdir())
+    print("")
+    with open("IHG/IHG.json", "r+") as jsonFile:
         data = json.load(jsonFile)
         # data["startDate"] = '2022-08-21'
         data["startDate"] = checkin
@@ -36,7 +38,7 @@ for i in range(180):
         json.dump(data, jsonFile)
         jsonFile.truncate()
         jsonFile.close()
-    body = open('IHG.json')
+    body = open('IHG/IHG.json')
     body = body.read()
 
     resp = requests.post(url, headers=headers, data=body)

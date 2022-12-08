@@ -21,7 +21,7 @@ ua_list = [
 headers = {'Content-Type':content_type,  'User-Agent': random.choice(ua_list)}
 
 
-load = pd.read_csv('./csairInter.csv')
+load = pd.read_csv('csairInter.csv')
 depCity = load["DepCity"].tolist()
 arrCity = load["ArrCity"].tolist()
 dayOfWeek = load["DayOfWeek"].tolist()
