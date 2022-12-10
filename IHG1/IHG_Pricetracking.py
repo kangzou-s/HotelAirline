@@ -20,7 +20,7 @@ ua_list = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0',
     'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .\
     NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; InfoPath.3)', ]
-headers = {'Content-Type': content_type, 'X-IHG-API-KEY': api_key, 'X-IHG-MWS-API-TOKEN': api_token,
+headers = {'Content-Type': content_type, 'X-IHG1-API-KEY': api_key, 'X-IHG1-MWS-API-TOKEN': api_token,
            'User-Agent': 'IHGBranded-Priorityclubrewards-Universal/107.5.7.0 (iPhone; iOS 10.2; Scale/2.00)'}
 
 for i in range(180):
@@ -28,7 +28,7 @@ for i in range(180):
     checkout = str((datetime.today() + timedelta(days=(i + 1))).date())
     print(os.listdir())
     print("")
-    with open("IHG/IHG.json", "r+") as jsonFile:
+    with open("IHG.json", "r+") as jsonFile:
         data = json.load(jsonFile)
         # data["startDate"] = '2022-08-21'
         data["startDate"] = checkin
@@ -38,7 +38,7 @@ for i in range(180):
         json.dump(data, jsonFile)
         jsonFile.truncate()
         jsonFile.close()
-    body = open('IHG/IHG.json')
+    body = open('IHG.json')
     body = body.read()
 
     resp = requests.post(url, headers=headers, data=body)

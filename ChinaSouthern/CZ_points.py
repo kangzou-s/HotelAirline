@@ -21,12 +21,12 @@ ua_list = [
 headers = {'Content-Type':content_type,  'User-Agent': random.choice(ua_list)}
 
 
-load = pd.read_csv('csairInter.csv')
+load = pd.read_csv('ChinaSouthern/csairInter.csv')
 depCity = load["DepCity"].tolist()
 arrCity = load["ArrCity"].tolist()
 dayOfWeek = load["DayOfWeek"].tolist()
 for j in range(26, len(depCity)):
-    with open("CZ_Points.json", "r+") as jsonFile:
+    with open("ChinaSouthern/CZ_Points.json", "r+") as jsonFile:
         data = json.load(jsonFile)
         data["depCity"] = depCity[j]
         data["arrCity"] = arrCity[j]
@@ -56,7 +56,7 @@ for j in range(26, len(depCity)):
         datetime_obj = datetime_obj + timedelta(days=1)
         datetime_str = str(datetime_obj.date())
         datetime_str = re.sub('-', '', datetime_str)
-        with open("CZ_Points.json", "r+") as jsonFile:
+        with open("ChinaSouthern/CZ_Points.json", "r+") as jsonFile:
             data = json.load(jsonFile)
             data["flightDate"] = datetime_str
             # data["depCity"] = "PAR"
@@ -65,7 +65,7 @@ for j in range(26, len(depCity)):
             json.dump(data, jsonFile)
             jsonFile.truncate()
             jsonFile.close()
-        body = open('CZ_Points.json')
+        body = open('ChinaSouthern/CZ_Points.json')
         body = body.read()
         try:
             resp = requests.post(url, headers=headers, data=body, timeout=5)
